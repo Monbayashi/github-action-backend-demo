@@ -11,11 +11,11 @@ jobs:
     MONGODB_CLUSTER_ADDRESS: demo-cluster
     MONGODB_USERNAME: demo-user
     MONGODB_PASSWORD: demo-password
-  #   environment: testing
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Get Code
-  #       uses: actions/checkout@v3
+    environment: testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
   #     - name: Cache dependencies
   #       uses: actions/cache@v3
   #       with:
@@ -30,7 +30,7 @@ jobs:
   #     - name: Output information
   #       run: echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
   deploy:
-    # needs: test
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
