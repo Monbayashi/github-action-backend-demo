@@ -8,9 +8,10 @@ env:
   MONGODB_DB_NAME: gha-demo
 jobs:
   test:
-    MONGODB_CLUSTER_ADDRESS: demo-cluster
-    MONGODB_USERNAME: demo-user
-    MONGODB_PASSWORD: demo-password
+    env:
+      MONGODB_CLUSTER_ADDRESS: demo-cluster
+      MONGODB_USERNAME: demo-user
+      MONGODB_PASSWORD: demo-password
     environment: testing
     runs-on: ubuntu-latest
     steps:
